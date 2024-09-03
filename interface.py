@@ -1,6 +1,4 @@
-'''
-The UserInterface class holds a set of commands and their corresponding methods.
-'''
+
 
 from message import Message
 
@@ -24,9 +22,9 @@ class UserInterface:
     def deregister_command(self, command):
         self.commands.pop(command)
 
-    def execute_command(self, command, **kwargs):
+    def execute_command(self, command, args):
         try:
             func = self.commands[command]["callback"]
-            return func(**kwargs)
+            return func(args)
         except:
             self.message.print("sorry, that is not a valid command")

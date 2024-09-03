@@ -1,16 +1,12 @@
 # 4360-banking
 
-Get Started
-    - clone this repo.
-    - install dependencies
-    - python index.py [/option]
-        - /help - shows a list of options
-        - /login [name] [password] - takes name (string) and password (string) to log user into system
-        - /accounts - shows a list of accounts with balance
-        - /balance [accountNumber] - shows the balance of accountNumber (integer)
-        - /deposit [amount] [accountNumber] - deposits the amount (float number) into the accountNumber (integer)
-        - /withdraw [amount] [accountNumber] - withdraws the amount (float number) from the accountNumber (integer)
-        - /transfer [amount] [fromAccountNumber] [toAccountNumber] - transfers the amount (float number) from the fromAccountNumber (integer) to the toAccountNumber (integer)
+Get Started    
+    - python index.py 
+
+User Interface
+    - deposit [amount] [accountNumber] - deposits the amount (float number) into the accountNumber (integer)
+    - withdraw [amount] [accountNumber] - withdraws the amount (float number) from the accountNumber (integer)
+    - transfer [amount] [fromAccountNumber] [toAccountNumber] - transfers the amount (float number) from the fromAccountNumber (integer) to the toAccountNumber (integer)
 
 
 Requirements

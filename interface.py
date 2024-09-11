@@ -1,11 +1,17 @@
 
-
+import os, platform #5
 from message import Message
 
 class UserInterface:
     def __init__(self):
         self.commands = {}
         self.message = Message()
+
+    def clear_screen(self):
+        if platform.system() == 'Windows': #5 added os dependant terminal clear command
+            os.system('cls')
+        else:
+            os.system('clear')
 
     def show_commands(self):
         for key,val in self.commands.items():

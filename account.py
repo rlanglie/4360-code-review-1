@@ -15,6 +15,8 @@ class Account:
             raise InsufficientFundsException
     
     def deposit(self, amount):
+        if amount <= 0: #1 added positive value check
+            raise ValueError("deposit must be a positive value")
         self.balance += amount
         return self.balance
 

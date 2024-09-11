@@ -9,7 +9,7 @@ class Auth:
     def __init__(self):
         pass
 
-    def login(self, username, password): #3
+    def login(self, username, password): #3 changed name
         with open('db.json', 'r') as file:
             users = json.load(file)['users']
 

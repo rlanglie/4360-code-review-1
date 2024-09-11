@@ -8,7 +8,7 @@ class UserInterface:
         self.message = Message()
 
     def clear_screen(self):
-        if platform.system() == 'Windows': #5 added os dependant terminal clear command
+        if platform.system() == 'Windows': #5 added os dependant terminal clear commands
             os.system('cls')
         else:
             os.system('clear')

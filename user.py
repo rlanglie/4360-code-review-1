@@ -8,6 +8,7 @@ class User:
     def __init__(self, name, accounts):
         self.name = name
         self.accounts = accounts
+        self.session_transfers = 0
 
     def show_accounts(self):
         message.print("{:<20}{:<0}".format("Account Number", "Amount"))
@@ -54,6 +55,12 @@ class User:
         toAccountNumber = int(args[1])
         amount = int(args[2])
 
+        if (amount > 10000): #6 added transfer amount limit
+            raise TransferAmtLimitException
+        
+        if (self.session_transfers >= 3): #7 added transfer number limit
+            raise TransferNumberLimitException
+
         account1 = self.accounts[fromAccountNumber]
         account2 = self.accounts[toAccountNumber]
 
@@ -62,3 +69,4 @@ class User:
 
         account1.withdraw(amount)
         account2.deposit(amount)
+        self.session_transfers += 1

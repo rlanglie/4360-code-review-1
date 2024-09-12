@@ -1,4 +1,4 @@
-from exceptions import InsufficientFundsException
+from exceptions import BankingException, InsufficientFundsException, PositiveAmountException
 
 class Account:
     def __init__(self, balance):
@@ -8,15 +8,21 @@ class Account:
         return self.balance
 
     def withdraw(self, amount):
-        if self.balance >= amount:
-            self.balance -= amount
-            return self.balance
-        else:
-            raise InsufficientFundsException
+        try: #14 wrapped with try statement to allow exceptions to raise properly
+            if self.balance >= amount:
+                self.balance -= amount
+                return self.balance
+            else:
+                raise InsufficientFundsException
+        except BankingException as e:
+            message.print(e.message())
+        except:
+            message.print("An error occurred")
+
     
     def deposit(self, amount):
         if amount <= 0: #1 added positive value check
-            raise ValueError("deposit must be a positive value")
+            raise PositiveAmountException
         self.balance += amount
         return self.balance
 

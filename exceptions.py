@@ -1,18 +1,25 @@
-class BankingExcpetion(Exception):
+class BankingException(Exception): #10 spelling error
     pass
 
-class InsufficientFundsException(BankingExcpetion):
+class InsufficientFundsException(BankingException):
     def message(self):
         return 'An error occurred: Insufficent Funds'
 
-class InvalidAccountNumberException(BankingExcpetion):
+class InvalidAccountNumberException(BankingException):
     def message(self):
         return "An error occurred: Invalid Account Number"
     
-class TransferAmtLimitException(BankingExcpetion):
+class TransferAmtLimitException(BankingException):
     def message(self):
         return "An error occured: Amount Limit of 10000 Per Transfer Exceeded"
 
-class TransferNumberLimitException(BankingExcpetion):
+class TransferNumberLimitException(BankingException):
     def message(self):
         return "An error occured: Transfer Limit of 3 Transfers Per Session Exceeded"
+
+class LoginAttemptAmtException(BankingException):
+    def message(self):
+        return "An error occured: Too Many Login Attempts"
+class PositiveAmountException(BankingException):
+    def message(self):
+        return "An error occured: Deposit Must Be a Positive Value"
